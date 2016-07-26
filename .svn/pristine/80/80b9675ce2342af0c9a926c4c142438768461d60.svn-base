@@ -1,0 +1,71 @@
+﻿using System;
+using System.Data;
+using Oracle.DataAccess.Client;
+using OracleCommand = Oracle.DataAccess.Client.OracleCommand;
+using OracleConnection = Oracle.DataAccess.Client.OracleConnection;
+using OracleParameter = Oracle.DataAccess.Client.OracleParameter;
+
+namespace AUtilities
+{
+    public class SaveAfterReturning
+    {
+        private OracleConnection Connection = null;
+        private string ColumnName = "";
+        public SaveAfterReturning(string columnName)
+        {
+           // this.Connection = commonConnection;
+            ColumnName = columnName;
+        }
+        public SaveAfterReturning(OracleConnection commonConnection, string columnName)
+        {
+            this.Connection = commonConnection;
+            ColumnName = columnName;
+        }
+
+        private string ReturnId(string columnName)
+        {
+            return string.Format(" returning {0} into :outId", columnName);
+        }
+
+        public Int32 ExecuteNoQuery(string insertQuery)
+        {
+            Int32 returnId = 0;
+            if (Connection == null && ColumnName=="")
+            {
+                throw new Exception("Pleas check CommonConnection and Column Name");
+            }
+            //using (OracleConnection connection = Connection.OracleConnection)
+            //{
+            //    connection.Open();
+
+            OracleCommand command = Connection.CreateCommand();
+                //OracleTransaction transaction;
+
+                // Start a local transaction.
+                //transaction = connection.BeginTransaction(IsolationLevel.ReadCommitted);
+
+                // Must assign both transaction object and connection
+                // to Command object for a pending local transaction
+            command.Connection = Connection;
+               // command.Transaction = transaction;
+
+                try
+                {
+                    command.CommandText = insertQuery + ReturnId(ColumnName);
+                    OracleParameter p2 = new OracleParameter("outId", OracleDbType.Int32);
+                    p2.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(p2);
+                    command.ExecuteNonQuery();
+                    //transaction.Commit();
+
+                    returnId = Convert.ToInt32(command.Parameters[0].Value.ToString());
+
+                }
+                catch{}
+            
+               
+            //}
+            return returnId;
+        }
+    }
+}

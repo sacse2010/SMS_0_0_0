@@ -1,0 +1,10 @@
+﻿$(document).ready(function () {
+
+    $("#btnSave").click(function () {
+        TestDetailsManager.SaveTestData();
+    });
+
+});
+
+
+

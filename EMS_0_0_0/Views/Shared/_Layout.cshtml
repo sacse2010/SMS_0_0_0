@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Education Management System (EMS)</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Styles.Render("~/UIFramework/KendoUI/kendo/kendoui.web/styles/kendo.common.min.css")
+    @Styles.Render("~/UIFramework/KendoUI/kendo/kendoui.web/styles/kendo.bootstrap.min.css")
+  
+
+    @{
+        var themeName = Session["themeName"];
+        if (themeName == null)
+        {
+            //themeName = "default";
+            themeName = "blueopal";
+        }
+        else
+        {
+            themeName = Session["themeName"];
+        }
+    }
+    @*@Styles.Render("~/UIFramework/KendoUI/kendo/kendoui.web/styles/kendo." + @themeName + ".min.css")
+    @Styles.Render("~/UIFramework/KendoUI/Css/KendoThemes.css")*@
+
+    @Scripts.Render("~/Scripts/jquery-2.2.3.min.js")
+    @Scripts.Render("~/Scripts/Common/common.js")
+
+    @Scripts.Render("~/UIFramework/KendoUI/kendo/kendoui.web/js/kendo.web.min.js")
+
+    <script src="~/Scripts/json2.js"></script>
+    <script src="~/Scripts/Common/postify.js"></script>
+    @Scripts.Render("~/Scripts/jquery.blockUI.js")
+    @Styles.Render("~/UIFramework/MessageBox/css/buttons.css")
+    @Scripts.Render("~/UIFramework/MessageBox/js/noty/jquery.noty.js")
+    @Scripts.Render("~/UIFramework/MessageBox/js/noty/layouts/center.js")
+    @Scripts.Render("~/UIFramework/MessageBox/js/noty/themes/default.js")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("EMS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Test", "Test", "Test")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Education Management System</p>
+        </footer>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

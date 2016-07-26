@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "Test Settings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/EMS/Test/TestSettings.js")
+
+@Html.Partial("TestDetails")
+@Html.Partial("TestSummary")

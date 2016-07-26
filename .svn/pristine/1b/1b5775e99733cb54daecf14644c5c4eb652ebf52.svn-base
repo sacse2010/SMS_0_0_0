@@ -1,0 +1,12 @@
+﻿namespace AUtilities.Common.Message
+{
+    public class MessageHelper
+    {
+        public enum GetOperationMessage
+        {
+            Success = 1,
+            Failed = 0
+
+        }
+    }
+}

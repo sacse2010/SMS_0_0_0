@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DAL.EMS.DataService;
+using Entities.EMS;
+
+namespace BLL.EMS.Test
+{
+    public class TestService:ITestRepository
+    {
+        TestDataService _testDataService = new TestDataService();
+
+        public string SaveTestData(TestEntity objTest)
+        {
+            return _testDataService.SaveTestData(objTest);
+        }
+    }
+}

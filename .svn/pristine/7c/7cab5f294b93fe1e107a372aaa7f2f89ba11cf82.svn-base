@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+using DBManager;
+using Entities.EMS;
+
+namespace DAL.EMS.DataService
+{
+   
+   public class Test
+    {
+       CommonConnection connection = new CommonConnection();
+
+       //For Save Data
+       public string Save()
+       {
+           string sql = "";
+           connection.ExecuteNonQuery(sql);
+
+           return "";
+       }
+
+       //For Get Data For Combo
+       public List<TestEntity> GetData()
+       {
+           string sql = "";
+           var data = Kendo<TestEntity>.Combo.DataSource(sql);
+           return data;
+       }
+
+       //For Get Data For Grid
+       public GridEntity<TestEntity> GetGridData(GridOptions options)
+       {
+           string sql = "";
+           var data = Kendo<TestEntity>.Grid.DataSource(options,sql,"");
+           return data;
+       }
+
+     
+    }
+}

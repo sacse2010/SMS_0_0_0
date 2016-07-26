@@ -1,0 +1,13 @@
+﻿namespace AUtilities
+{
+    public enum Operation
+    {
+        Success,
+        Failed,
+        Error,
+        Exists,
+        NoChange
+    }
+
+
+}

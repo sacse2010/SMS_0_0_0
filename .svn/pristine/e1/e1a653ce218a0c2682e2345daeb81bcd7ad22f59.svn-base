@@ -1,0 +1,59 @@
+﻿@Scripts.Render("~/Scripts/EMS/Test/TestDetails.js")
+
+<div class="rightDiv k-block">
+    <h2 class="k-header centerAlign">Test Details</h2>
+    <div id="TestDetailsDiv" class="test">
+
+        <ul>
+
+            <li>
+                <label for="TestCode" class="lbl widthSize20_per">Test Code:</label>
+                <input type="text" id="txtTestCode" name="TestCode" maxlength="4" class="k-textbox" placeholder="Test Code" required validationmessage="Please enter valid Test Code" />
+            </li>
+            <li>
+                <label for="TestName" class="lbl widthSize20_per">Test Name:</label>
+                <input type="text" id="txtTestName" name="TestName" maxlength="100" pattern="[a-zA-Z0-9 ]+" class="k-textbox" placeholder="Test Name" required validationmessage="Please enter valid Test Name" />
+            </li>
+            <li>
+                <label for="TestDescription" class="lbl widthSize20_per">Test Description:</label>
+                <textarea type="address" id="txtTestDescription" maxlength="2000" name="TestDescription" style="width: 17.4em" class="k-textbox"></textarea>
+            </li>
+
+            <li>
+                <label for="TestComboBox" class="lbl widthSize20_per">Test Type:</label>
+                <input type="text" id="cmbTestType" name="TestComboBox" style="width: 17.4em" />
+            </li>
+            <li>
+                <label for="TestDropdown" class="lbl widthSize20_per">Test Type2:</label>
+                <input type="text" id="ddlTestType" name="TestDropdown" style="width: 17.4em"/>
+            </li>
+            <li>
+                <label for="IsActive" class="lbl widthSize40_per">Is Active:</label>
+                <input type="checkbox" id="chkIsActive" name="IsActive" class="k-checkbox" />
+
+            </li>
+            <li class="accept">
+                <button id="btnSave" class="k-button" type="submit">Submit</button>
+            </li>
+            <li class="status"></li>
+        </ul>
+    </div>
+</div>
+
+<style type="text/css">
+    .test ul {
+        text-decoration: none;
+        list-style: none;
+      
+
+    }
+
+    .test li {
+          padding: 5px 5px 5px 5px;
+    }
+
+    .lbl {
+        width: 20%;
+        height: 10%
+    }
+</style>
