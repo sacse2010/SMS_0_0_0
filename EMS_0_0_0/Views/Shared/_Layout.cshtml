@@ -9,7 +9,8 @@
 
     @Styles.Render("~/UIFramework/KendoUI/kendo/kendoui.web/styles/kendo.common.min.css")
     @Styles.Render("~/UIFramework/KendoUI/kendo/kendoui.web/styles/kendo.bootstrap.min.css")
-  
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
 
     @{
         var themeName = Session["themeName"];
@@ -28,18 +29,7 @@
 
 
     
-    @Scripts.Render("~/Scripts/jquery-2.2.3.min.js")
-    @Scripts.Render("~/Scripts/Common/common.js")
-
-    @Scripts.Render("~/UIFramework/KendoUI/kendo/kendoui.web/js/kendo.web.min.js")
-
-    <script src="~/Scripts/json2.js"></script>
-    <script src="~/Scripts/Common/postify.js"></script>
-    @Scripts.Render("~/Scripts/jquery.blockUI.js")
-    @Styles.Render("~/UIFramework/MessageBox/css/buttons.css")
-    @Scripts.Render("~/UIFramework/MessageBox/js/noty/jquery.noty.js")
-    @Scripts.Render("~/UIFramework/MessageBox/js/noty/layouts/center.js")
-    @Scripts.Render("~/UIFramework/MessageBox/js/noty/themes/default.js")
+   
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -70,8 +60,7 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+  
     @RenderSection("scripts", required: false)
 </body>
 </html>
