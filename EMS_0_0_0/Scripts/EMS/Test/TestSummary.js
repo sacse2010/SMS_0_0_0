@@ -29,7 +29,7 @@ var TestSummaryManager = {
 
             allowUnsort: true,
 
-            pageSize: 2,
+            pageSize: 5,
 
             transport: {
                 read: {
