@@ -1,0 +1,178 @@
+﻿@Scripts.Render("~/Scripts/EMS/Test/TestDetails.js")
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#tabs').tab();
+    });
+</script>
+<div class="bs-example">
+    <div class="well well-sm">Student Profile Info</div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel with-nav-tabs panel-default">
+                <div class="panel-heading">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1default" data-toggle="tab">Default 1</a></li>
+                        <li><a href="#tab2default" data-toggle="tab">Default 2</a></li>
+                        <li><a href="#tab3default" data-toggle="tab">Default 3</a></li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#tab4default" data-toggle="tab">Default 4</a></li>
+                                <li><a href="#tab5default" data-toggle="tab">Default 5</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <!-- Begin Student Profile-->
+                        <div class="tab-pane fade in active" id="tab1default">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputFirstName">First Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="First Name" id="txtFirstName" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputLastName">Last Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Last Name" id="txtLastName" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputFatherName">Father's Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Father's Name" id="txtFatherName" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputMotherName">Mother's Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Mother's Name" id="txtMotherName" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputFatherOccupation">Father's Occupation</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Father's Occupation" id="txtFatherOccupation" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputMotherOccupation">Mother's Occupation</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Mother's Occupation" id="txtMotherOccupation" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputEmail">Email</label>
+                                    <div class="col-md-6">
+                                        <input type="email" placeholder="Email" id="txtEmail" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputContactPertion">Contact Pertion</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Email" id="txtContactPertion" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputPhone1">Phone 1</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Phone 1" id="txtPhone1" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputPhone2">Phone 2</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Phone 2" id="txtPhone2" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputDOB">Date of Birth</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Date of Birth" id="txtDateOfBirth" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputBirthReg">Birth Registration No</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Date of Birth" id="txtBitrhRegNo" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputAdmission">Admission Date</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Admission Date" id="txtAdmissionDate" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputBloodGroup">Blood Group</label>
+                                    <div class="col-md-6">
+                                        <input type="text"  id="ddlTestType" name="TestDropdown" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputPGender">Gender</label>
+                                    <div class="col-md-6 btn-group">
+                                        <label class="btn btn-default">
+                                            <input type="radio" value="Male" name="gender" id="IsMale" checked="checked"> Male
+                                        </label>
+                                        <label class="btn btn-default">
+                                            <input type="radio" value="Female" name="gender" id="IsFemale"> Female
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputReligion">Religion</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Date of Birth" id="txtReligion" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputIdentification">Identification Mark</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Identification Mark" id="txtIdentificationMark" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputNationality">Nationality</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Nationality" id="txtNationality" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-md-10">
+
+                                        <div class="checkbox">
+                                            <label> <input type="checkbox"> Remember me </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <button class="btn btn-default" type="submit">Sign in</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--End Student Profile-->
+                        <div class="tab-pane fade" id="tab2default">Default 2</div>
+                        <div class="tab-pane fade" id="tab3default">Default 3</div>
+                        <div class="tab-pane fade" id="tab4default">Default 4</div>
+                        <div class="tab-pane fade" id="tab5default">Default 5</div>
+                    </div>
+
+                </div>
+
+                <ul class="list-group ">
+                    <li class="list-group-item">
+                        <button class="btn btn-default" type="submit">Submit</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
