@@ -115,7 +115,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -125,8 +124,6 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\coustom.css" />
-    <Content Include="Content\docs.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1801,9 +1798,6 @@
     <Content Include="Views\Test\Test.cshtml" />
     <Content Include="Views\Test\TestDetails.cshtml" />
     <Content Include="Views\Test\TestSummary.cshtml" />
-    <Content Include="Views\Profile\Profile.cshtml" />
-    <Content Include="Views\Profile\_ProfileDetails.cshtml" />
-    <Content Include="Views\Profile\_ProfileSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
