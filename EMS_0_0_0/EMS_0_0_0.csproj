@@ -170,6 +170,10 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="UIFramework\FileInput\css\fileinput.css" />
+    <Content Include="UIFramework\FileInput\css\fileinput.min.css" />
+    <Content Include="UIFramework\FileInput\js\fileinput.js" />
+    <Content Include="UIFramework\FileInput\js\fileinput.min.js" />
     <Content Include="UIFramework\KendoUI\Css\Common.css" />
     <Content Include="UIFramework\KendoUI\Css\CommonSize.css" />
     <Content Include="UIFramework\KendoUI\Css\Common_Bat.css" />

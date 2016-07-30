@@ -1,4 +1,10 @@
 ﻿@Scripts.Render("~/Scripts/EMS/Test/TestDetails.js")
+@Styles.Render("~/UIFramework/FileInput/css/fileinput.css")
+
+
+@Scripts.Render("~/UIFramework/FileInput/js/fileinput.js")
+
+
 <script type="text/javascript">
     $(document).ready(function () {
         $('#tabs').tab();
@@ -11,23 +17,20 @@
             <div class="panel with-nav-tabs panel-default">
                 <div class="panel-heading">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab1default" data-toggle="tab">Default 1</a></li>
-                        <li><a href="#tab2default" data-toggle="tab">Default 2</a></li>
-                        <li><a href="#tab3default" data-toggle="tab">Default 3</a></li>
-                        <li class="dropdown">
-                            <a href="#" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#tab4default" data-toggle="tab">Default 4</a></li>
-                                <li><a href="#tab5default" data-toggle="tab">Default 5</a></li>
-                            </ul>
-                        </li>
+                        <li class="active"><a href="#tabStudentProfile" data-toggle="tab">Student Profile</a></li>
+                        <li><a href="#tabStudentInfo" data-toggle="tab">Student Info</a></li>
+                        <li><a href="#tabAddress" data-toggle="tab">Address</a></li>
+                        <li><a href="#tabPreviousEducation" data-toggle="tab">Previous Education</a></li>
+                        <li><a href="#tabPhotograph" data-toggle="tab">Photograph</a></li>
+
+
                     </ul>
                 </div>
                 <div class="panel-body">
                     <div class="tab-content">
                         <!-- Begin Student Profile-->
-                        <div class="tab-pane fade in active" id="tab1default">
-                            <form class="form-horizontal">
+                        <div class="tab-pane fade in active" id="tabStudentProfile">
+                            <div class="form-horizontal">
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="inputFirstName">First Name</label>
                                     <div class="col-md-6">
@@ -109,7 +112,7 @@
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="inputBloodGroup">Blood Group</label>
                                     <div class="col-md-6">
-                                        <input type="text"  id="ddlTestType" name="TestDropdown" />
+                                        <input type="text" id="ddlTestType" name="TestDropdown" />
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -141,28 +144,259 @@
                                         <input type="text" placeholder="Nationality" id="txtNationality" class="form-control">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-md-10">
+                               
 
-                                        <div class="checkbox">
-                                            <label> <input type="checkbox"> Remember me </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-offset-2 col-md-10">
-                                        <button class="btn btn-default" type="submit">Sign in</button>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
                         </div>
                         <!--End Student Profile-->
-                        <div class="tab-pane fade" id="tab2default">Default 2</div>
-                        <div class="tab-pane fade" id="tab3default">Default 3</div>
-                        <div class="tab-pane fade" id="tab4default">Default 4</div>
-                        <div class="tab-pane fade" id="tab5default">Default 5</div>
-                    </div>
+                        <!--Begin Student Info-->
+                        <div class="tab-pane fade" id="tabStudentInfo">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputStudentCode">Student Code</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Student Code" id="txtStudentCode" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputClassDepartment">Class/Dpartment</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="ddlClassDepartment">
+                                            <option value="0">Select One</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputSection">Section</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="ddlSecstion">
+                                            <option value="0">Select One</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputRollNo">Roll No </label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Roll No" id="txtRollNo" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputRegistrationNo">Registration No </label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Regidtration No" id="txtRegistrationNo" class="form-control">
+                                    </div>
+                                </div>
 
+                            </div>
+                        </div>
+                        <!--End Student Info-->
+                        <!--Begin Address-->
+                        <div class="tab-pane fade" id="tabAddress">
+                            <div class="well well-sm">
+                                <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                                Present Address
+                            </div>
+
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputName">Name C/O</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Name C/O" id="txtNameCOPre" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputVillageTown">Village/Town</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Village/Town" id="txtVillageTownPre" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputPost">Post</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Post" id="txtPostPre" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputDivision">Division</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="ddlDivisionPre">
+                                            <option value="0">Select One</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputDistrict">District</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="ddlDistrictPre">
+                                            <option value="0">Select One</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputThana">Thana</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="ddlThanaPre">
+                                            <option value="0">Select One</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="well well-sm">
+                                <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                                Permanent Address
+                            </div>
+
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputName">Name C/O</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Name C/O" id="txtNameCOPer" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputVillageTown">Village/Town</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Village/Town" id="txtVillageTownPer" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputPost">Post</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Post" id="txtPostPer" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputDivision">Division</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="ddlDivisionPer">
+                                            <option value="0">Select One</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputDistrict">District</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="ddlDistrictPer">
+                                            <option value="0">Select One</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputThana">Thana</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="ddlThanaPer">
+                                            <option value="0">Select One</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--End Address-->
+                        <!--Begin Previous Education-->
+                        <div class="tab-pane fade" id="tabPreviousEducation">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputLevelofEducation">Level of Education</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Level of Education" id="txtLevelofEducation" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputGroup">Concentration/Major/Group</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Concentration/Major/Group" id="txtGroup" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputInstitute">Institute Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Institute Name" id="txtInstitute" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputResult">Result</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Result" id="txtResult" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputPassingYear">Year of Passing</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Year of passing" id="txtYearofPassing" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputDuration">Duration (Years)</label>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Duration" id="txtDuration" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="inputActivement">Activement</label>
+                                    <div class="col-md-6">
+                                        <textarea class="form-control" id="txtActivement" rows="3"></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--Begin Previous Education-->
+                        <!--Begin Photograph-->
+                        <div class="tab-pane fade" id="tabPhotograph">
+                            <div class="container kv-main">
+
+                                <h4>Multi Language Inputs</h4>
+                                <form enctype="multipart/form-data">
+                                    <label>French Input</label>
+                                    <input id="file-fr" name="file-fr[]" type="file" multiple>
+                                </form>
+                                <script>
+                                    $('#file-fr').fileinput({
+                                        language: 'fr',
+                                        uploadUrl: '#',
+                                        allowedFileExtensions: ['jpg', 'png', 'gif'],
+                                    });
+                                </script>
+
+
+                            </div>
+                            <!--Begin Photograph-->
+                        </div>
+                    </div>
                 </div>
 
                 <ul class="list-group ">
@@ -170,8 +404,10 @@
                         <button class="btn btn-default" type="submit">Submit</button>
                     </li>
                 </ul>
+
+
+
             </div>
         </div>
     </div>
 </div>
-

@@ -9,7 +9,7 @@ namespace EMS_0_0_0
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js",
+                        //"~/Scripts/jquery-{version}.js",
                         "~/Scripts/Common/common.js",
                         "~/UIFramework/KendoUI/kendo/kendoui.web/js/kendo.web.min.js",
                         "~/Scripts/json2.js",
