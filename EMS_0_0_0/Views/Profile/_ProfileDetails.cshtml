@@ -1,9 +1,5 @@
 ﻿@Scripts.Render("~/Scripts/EMS/Test/TestDetails.js")
-@Styles.Render("~/UIFramework/FileInput/css/fileinput.css")
-
-
-@Scripts.Render("~/UIFramework/FileInput/js/fileinput.js")
-
+@Scripts.Render("~/Scripts/EMS/FileUpload/FileUploadManager.js")
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -144,7 +140,7 @@
                                         <input type="text" placeholder="Nationality" id="txtNationality" class="form-control">
                                     </div>
                                 </div>
-                               
+
 
                             </div>
                         </div>
@@ -379,19 +375,12 @@
                         <div class="tab-pane fade" id="tabPhotograph">
                             <div class="container kv-main">
 
-                                <h4>Multi Language Inputs</h4>
+                                <h4>Profile Photos</h4>
                                 <form enctype="multipart/form-data">
-                                    <label>French Input</label>
-                                    <input id="file-fr" name="file-fr[]" type="file" multiple>
+                                    <label>Select Photo:</label>
+                                    <input id="file" name="file-fr[]" type="file" multiple>
+                                    <button id="btnDelete" type="button" class="btn btn-default">Delete</button>
                                 </form>
-                                <script>
-                                    $('#file-fr').fileinput({
-                                        language: 'fr',
-                                        uploadUrl: '#',
-                                        allowedFileExtensions: ['jpg', 'png', 'gif'],
-                                    });
-                                </script>
-
 
                             </div>
                             <!--Begin Photograph-->
