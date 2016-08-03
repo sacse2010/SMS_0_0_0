@@ -114,8 +114,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClassInfoController.cs" />
+    <Compile Include="Controllers\CollectionTypeController.cs" />
+    <Compile Include="Controllers\FeesCollectionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\SectionController.cs" />
+    <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1809,6 +1814,21 @@
     <Content Include="Views\Profile\Profile.cshtml" />
     <Content Include="Views\Profile\_ProfileDetails.cshtml" />
     <Content Include="Views\Profile\_ProfileSummary.cshtml" />
+    <Content Include="Views\FeesCollection\FeesCollection.cshtml" />
+    <Content Include="Views\FeesCollection\_FeesCollectionDetails.cshtml" />
+    <Content Include="Views\FeesCollection\_FeesCollectionSummary.cshtml" />
+    <Content Include="Views\Subject\Subject.cshtml" />
+    <Content Include="Views\Subject\_SubjectDetails.cshtml" />
+    <Content Include="Views\Subject\_SubjectSummary.cshtml" />
+    <Content Include="Views\Section\Section.cshtml" />
+    <Content Include="Views\Section\_SectionDetails.cshtml" />
+    <Content Include="Views\Section\_SectionSummary.cshtml" />
+    <Content Include="Views\ClassInfo\ClassInfo.cshtml" />
+    <Content Include="Views\ClassInfo\_ClassInfoDetails.cshtml" />
+    <Content Include="Views\ClassInfo\_ClassInfoSummary.cshtml" />
+    <Content Include="Views\CollectionType\CollectionType.cshtml" />
+    <Content Include="Views\CollectionType\_CollectionTypeDetails.cshtml" />
+    <Content Include="Views\CollectionType\_CollectionTypeSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
