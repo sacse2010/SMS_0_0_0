@@ -1843,6 +1843,7 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="UIFramework\KendoUI\kendo\kendoui.web\js\kendo.all.min.js" />
     <TypeScriptCompile Include="UIFramework\KendoUI\kendo\kendoui.web\typescript\kendo.web.d.ts" />
   </ItemGroup>
   <ItemGroup>

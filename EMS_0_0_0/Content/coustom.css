@@ -37,3 +37,25 @@
 }
 .form-control{border-radius: 0 !important}
 .btn{border-radius: 0 !important}
+ .valid {
+        color: green;
+    }
+
+    .invalid {
+        color: red;
+    }
+    span.k-widget.k-tooltip-validation {
+        display;
+        inline-block;
+        width: 160px;
+        text-align: left;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        background: none;
+        box-shadow: none;
+        color: red;
+    }
+    .k-tooltip-validation .k-warning {
+        display: none;
+    }

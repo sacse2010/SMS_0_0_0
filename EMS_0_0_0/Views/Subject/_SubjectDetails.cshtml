@@ -2,51 +2,74 @@
 <div class="bs-example">
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Subject Info</div>
-                <div class="panel-body">
-                    <div class="form-horizontal">
-                        <div class="form-group">
-                            <label class="col-md-2 control-label" for="inputSubjectCode">Subject Code</label>
-                            <div class="col-md-6">
-                                <input type="text" placeholder="Subject Code" id="txtSubjectCode" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-2 control-label" for="inputSubjectName">Subject Name</label>
-                            <div class="col-md-6">
-                                <input type="text" placeholder="Subject Name" id="txtSubjectName" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-2 control-label" for="inputDescription">Description</label>
-                            <div class="col-md-6">
-                                <textarea class="form-control" id="txtDescription" rows="3"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" id="chkIsActive"> IsActive
-                                    </label>
+            <form id="SubjectForm">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Subject Info</div>
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="inputSubjectCode">Subject Code</label>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Subject Code" name="Subject Code" id="txtSubjectCode" class="form-control" required validationMessage="Enter {0}">
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="inputSubjectName">Subject Name</label>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Subject Name" name="Subject Name" id="txtSubjectName" class="form-control" required validationMessage="Entry {0}">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="inputDescription">Description</label>
+                                <div class="col-md-6">
+                                    <textarea class="form-control" id="txtDescription" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="chkIsActive" checked="" name="Accept" required validationMessage="Acceptance is required"> IsActive
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
-
-
                     </div>
+                    <ul class="list-group ">
+                        <li class="list-group-item">
+                            <button class="btn btn-default" type="submit">Submit</button>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="list-group ">
-                    <li class="list-group-item">
-                        <button class="btn btn-default" type="submit">Submit</button>
-                    </li>
-                </ul>
-            </div>
+            </form>
         </div>
     </div>
 
 </div>
+
+
+<script>
+    $(document).ready(function () {
+        var validator = $("#SubjectForm").kendoValidator().data("kendoValidator"),
+        status = $(".status");
+
+        //$("form").submit(function(event) {
+        //    event.preventDefault();
+        //    if (validator.validate()) {
+        //        status.text("Hooray! Your tickets has been booked!")
+        //            .removeClass("invalid")
+        //            .addClass("valid");
+        //    } else {
+        //        status.text("Oops! There is invalid data in the form.")
+        //            .removeClass("valid")
+        //            .addClass("invalid");
+        //    }
+        //});
+    });
+</script>
