@@ -12,16 +12,11 @@ namespace Utilities.Common
 {
     public class UtilityCommon
     {
-
-
         public static string BuildWhereClause<T>(int index, string logic,
          AzFilter.GridFilter filter, List<object> parameters)
         {
             var entityType = (typeof(T));
-            
             var property = entityType.GetProperty(filter.Field);
-
-
             switch (filter.Operator.ToLower())
             {
                 case "eq":

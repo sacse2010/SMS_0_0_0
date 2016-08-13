@@ -59,3 +59,6 @@
     .k-tooltip-validation .k-warning {
         display: none;
     }
+    .k-grid, .k-scheduler, .k-menu, .k-editor {
+    border-radius: 0 !important;
+}

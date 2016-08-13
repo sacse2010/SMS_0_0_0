@@ -21,7 +21,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
     <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -146,6 +146,8 @@
     <Content Include="Scripts\Common\postify.js" />
     <Content Include="Scripts\Common\Themes.js" />
     <Content Include="Scripts\EMS\FileUpload\FileUploadManager.js" />
+    <Content Include="Scripts\EMS\Subject\SubjectSetting.js" />
+    <Content Include="Scripts\EMS\Subject\SubjectSummary.js" />
     <Content Include="Scripts\EMS\Test\TestDetails.js" />
     <Content Include="Scripts\EMS\Test\TestSettings.js" />
     <Content Include="Scripts\EMS\Test\TestSummary.js" />
@@ -1844,7 +1846,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="UIFramework\KendoUI\kendo\kendoui.web\js\kendo.all.min.js" />
-    <TypeScriptCompile Include="UIFramework\KendoUI\kendo\kendoui.web\typescript\kendo.web.d.ts" />
+    <Content Include="Scripts\EMS\Subject\SubjectDetails.js" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">

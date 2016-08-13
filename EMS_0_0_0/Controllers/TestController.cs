@@ -11,6 +11,7 @@ namespace EMS_0_0_0.Controllers
 {
     public class TestController : Controller
     {
+        ITestRepository _testRepository = new TestService();
         // GET: Test
         public ActionResult Test()
         {
@@ -20,8 +21,6 @@ namespace EMS_0_0_0.Controllers
           [HttpPost]
         public ActionResult SaveTestData(TestEntity objTest)
         {
-            ITestRepository _testRepository = new TestService();
-
             var res = Json(_testRepository.SaveTestData(objTest),JsonRequestBehavior.AllowGet);
             return res;
         }

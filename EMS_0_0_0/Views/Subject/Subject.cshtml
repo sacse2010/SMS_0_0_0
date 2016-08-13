@@ -3,7 +3,34 @@
     ViewBag.Title = "Subject";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@Scripts.Render("~/Scripts/EMS/Subject/SubjectSetting.js")
+<div class="bs-example">
+    <div class="row">
+        <div class="col-md-5">
+            @Html.Partial("_SubjectDetails")
+        </div>
+        <div class="col-md-7">
+            @Html.Partial("_SubjectSummary")
+        </div>
+    </div>
 
-@Html.Partial("_SubjectDetails")
-@Html.Partial("_SubjectSummary")
+</div>
+<script>
+    $(document).ready(function () {
+        var validator = $("#SubjectForm").kendoValidator().data("kendoValidator"),
+        status = $(".status");
 
+        //$("form").submit(function(event) {
+        //    event.preventDefault();
+        //    if (validator.validate()) {
+        //        status.text("Hooray! Your tickets has been booked!")
+        //            .removeClass("invalid")
+        //            .addClass("valid");
+        //    } else {
+        //        status.text("Oops! There is invalid data in the form.")
+        //            .removeClass("valid")
+        //            .addClass("invalid");
+        //    }
+        //});
+    });
+</script>

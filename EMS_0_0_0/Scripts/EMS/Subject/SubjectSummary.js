@@ -1,8 +1,7 @@
-﻿
-var TestSummaryManager = {
-    GenerateTestGrid: function () {
-        $("#gridTest").kendoGrid({
-            dataSource: TestSummaryManager.gridDataSource(),
+var SubjectSummaryManager = {
+    GenerateSubjectGrid: function () {
+        $("#gridSubject").kendoGrid({
+            dataSource: SubjectSummaryManager.gridDataSource(),
             pageable: {
                 refresh: true,
                 serverPaging: true,
@@ -11,45 +10,33 @@ var TestSummaryManager = {
             },
             filterable: true,
             sortable: true,
-            columns: TestSummaryHelper.GenerateTestColumns(),
+            columns: SubjectSummaryHelper.GenerateSubjectColumns(),
             editable: false,
             navigatable: true,
             selectable: "row",
         });
-
     },
     gridDataSource: function () {
         var gridDataSource = new kendo.data.DataSource({
             type: "json",
             serverPaging: true,
-
             serverSorting: true,
-
             serverFiltering: true,
-
             allowUnsort: true,
-
             pageSize: 5,
-
             transport: {
                 read: {
-                    url: '../Test/GetTestSummary/',
-
+                    url: '../Subject/GetSubjectSummary/',
                     type: "POST",
-
                     dataType: "json",
-
                     contentType: "application/json; charset=utf-8"
                 },
                 //update: {
                 //    url: '../Test/LoadAllCompanies/',
                 //    dataType: "json"
                 //},
-
                 parameterMap: function (options) {
-
                     return JSON.stringify(options);
-
                 }
             },
             schema: { data: "Items", total: "TotalCount" }
@@ -57,24 +44,24 @@ var TestSummaryManager = {
         return gridDataSource;
     }
 };
-
-var TestSummaryHelper = {
-    GenerateTestColumns: function () {
+var SubjectSummaryHelper = {
+    GenerateSubjectColumns: function () {
         return columns = [
-               { field: "TestCode", title: "TestCode", width: 80 },
-               { field: "TestName", title: "Test Name", width: 100 },
-               { field: "TestDescription", title: "Description", width: 100 },
-               { field: "TestId", hidden: true },
-            { field: "Edit", title: "Edit", filterable: false, width: 60, template: '<button type="button" class="btn btn-default btn-sm" value="Edit" id="btnEdit" onClick="TestSummaryHelper.clickEventForEditButton()" ><span class="glyphicon glyphicon-edit"></span> Edit</button>', sortable: false }
+            { field: "SubjectCode", title: "Code", width:50},
+            { field: "Name", title: "Name", width: 100 },
+            { field: "Description", title: "Description", width: 150 },
+            { field: "IsActive", title: "Status", width: 25 },
+            { field: "SubjectId", hidden: true },
+            { field: "Edit", title: "Edit", filterable: false, width: 60, template: '<button type="button" class="btn btn-default btn-sm" value="Edit" id="btnEdit" onClick="SubjectSummaryHelper.clickEventForEditButton()" ><span class="glyphicon glyphicon-edit"></span> Edit</button>', sortable: false }
         ];
     },
     clickEventForEditButton: function () {
+        var entityGrid = $("#gridSubject").data("kendoGrid");
+        var selectedItem = entityGrid.dataItem(entityGrid.select());
+        if (selectedItem != null) {
+            subjectDetailsHelper.FillSubjectDetailsInForm(selectedItem);
+        }
 
-        //var entityGrid = $("#gridTest").data("kendoGrid");
-        //var selectedItem = entityGrid.dataItem(entityGrid.select());
-        //if (selectedItem != null) {
-        //    TestHelper.FillTestDetailsInForm(selectedItem);
-        //}
 
-    }
+    },
 };
