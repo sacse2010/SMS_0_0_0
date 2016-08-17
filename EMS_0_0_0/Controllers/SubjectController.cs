@@ -25,10 +25,8 @@ namespace EMS_0_0_0.Controllers
         }
         public JsonResult GetSubjectSummary(GridOptions options)
         {
-          
             var res = Json(_subjectRepository.GetSubjectSummary(options), JsonRequestBehavior.AllowGet);
             return res;
-
         }
 
 

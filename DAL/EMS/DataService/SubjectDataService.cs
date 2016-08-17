@@ -29,7 +29,7 @@ namespace DAL.EMS.DataService
                 }
                 else
                 {
-                    condition = string.Format(@" Where SubjectCode='{0}' And SubjectId!={1}", objSubject.SubjectCode,
+                    condition = string.Format(@" Where SubjectCode='{0}' And SubjectId !={1}", objSubject.SubjectCode,
                         objSubject.SubjectId);
                 }
 
@@ -49,8 +49,7 @@ namespace DAL.EMS.DataService
                 {
                     query =
                         string.Format(@"Update SubjectInfo Set SubjectCode='{0}', Name='{1}', Description='{2}', IsActive='{3}' 
-                                            Where SubjectId={4}", objSubject.SubjectCode, objSubject.Name,
-                            objSubject.Description,
+                                            Where SubjectId={4}", objSubject.SubjectCode, objSubject.Name, objSubject.Description,
                             objSubject.IsActive, objSubject.SubjectId);
                 }
               //  var id = con.ExcuteSqlAfterReturn(sql);

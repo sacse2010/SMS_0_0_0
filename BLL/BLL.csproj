@@ -39,6 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EMS\Class\ClassService.cs" />
+    <Compile Include="EMS\Class\IClassRepositorycs.cs" />
+    <Compile Include="EMS\Section\ISectionReposiroty.cs" />
+    <Compile Include="EMS\Section\SectionService.cs" />
     <Compile Include="EMS\Subject\ISubjectRepository.cs" />
     <Compile Include="EMS\Subject\SubjectService.cs" />
     <Compile Include="EMS\Test\ITestRepository.cs" />

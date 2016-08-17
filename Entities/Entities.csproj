@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EMS\ClassEntity.cs" />
+    <Compile Include="EMS\SectionEntity.cs" />
     <Compile Include="EMS\SubjectEntity.cs" />
     <Compile Include="EMS\TestEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

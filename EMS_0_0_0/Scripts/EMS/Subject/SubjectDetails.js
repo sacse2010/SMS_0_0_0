@@ -1,11 +1,14 @@
 ﻿var subjectDetailsManager = {
-    
+
     SaveSubjectDate: function () {
-        var obj = subjectDetailsHelper.CreateSubjectObject();
-        var objSubject = JSON.stringify(obj).replace(/&/g, "^");
-        var jsonParam = 'objSubject:' + objSubject;
-        var serviceUrl = "../Subject/SaveSubjectData/";
-        AjaxManager.SendJson2(serviceUrl, jsonParam, onSuccess, onFailed);
+        var validator = $("#SubjectForm").kendoValidator().data("kendoValidator"), status = $(".status");
+        if (validator.validate()) {
+            var obj = subjectDetailsHelper.CreateSubjectObject();
+            var objSubject = JSON.stringify(obj).replace(/&/g, "^");
+            var jsonParam = 'objSubject:' + objSubject;
+            var serviceUrl = "../Subject/SaveSubjectData/";
+            AjaxManager.SendJson2(serviceUrl, jsonParam, onSuccess, onFailed);
+        }
 
         function onSuccess(jsonData) {
             if (jsonData == "Success") {
@@ -32,8 +35,8 @@
                 }
 
             }
-             
-            else if (jsonData == "Exist") {
+
+            else if (jsonData == "Exists") {
 
                 AjaxManager.MsgBox('warning', 'center', 'Already Exists:', 'Subject Code Already Exist !',
                     [{
@@ -57,7 +60,7 @@
                 [{
                     addClass: 'btn btn-primary', text: 'Ok', onClick: function ($noty) {
                         $noty.close();
-                  }
+                    }
                 }]);
         }
     },
@@ -69,20 +72,18 @@ var subjectDetailsHelper = {
         obj.SubjectCode = $("#txtSubjectCode").val();
         obj.Name = $("#txtSubjectName").val();
         obj.Description = $("#txtDescription").val();
-        obj.IsActive = $("#chkIsActive").is(":checked") == true ? 1 : 0;
+        obj.IsActive = $("#chkIsActive").is(":checked") == true ? "1" : "0";
         return obj;
     },
     FillSubjectDetailsInForm: function (obj) {
-        debugger;
         $("#hdnSubjectId").val(obj.SubjectId);
         $("#txtSubjectCode").val(obj.SubjectCode);
         $("#txtSubjectName").val(obj.Name);
         $("#txtDescription").val(obj.Description);
         if (obj.IsActive == 1) {
-            $('#chkIsActive').attr('checked', 'checked');
-        }
-        else {
-            $('#chkIsActive').removeAttr('checked', 'checked');
+            $("#chkIsActive").prop('checked', 'checked');
+        } else {
+            $("#chkIsActive").removeAttr('checked', 'checked');
         }
     },
 

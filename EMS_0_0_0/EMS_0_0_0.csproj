@@ -145,7 +145,13 @@
     <Content Include="Scripts\Common\OrganogramTree.js" />
     <Content Include="Scripts\Common\postify.js" />
     <Content Include="Scripts\Common\Themes.js" />
+    <Content Include="Scripts\EMS\Class\ClassDetails.js" />
+    <Content Include="Scripts\EMS\Class\ClassSetting.js" />
+    <Content Include="Scripts\EMS\Class\ClassSummary.js" />
     <Content Include="Scripts\EMS\FileUpload\FileUploadManager.js" />
+    <Content Include="Scripts\EMS\Section\ScetionDetails.js" />
+    <Content Include="Scripts\EMS\Section\SectionSetting.js" />
+    <Content Include="Scripts\EMS\Section\SectionSummary.js" />
     <Content Include="Scripts\EMS\Subject\SubjectSetting.js" />
     <Content Include="Scripts\EMS\Subject\SubjectSummary.js" />
     <Content Include="Scripts\EMS\Test\TestDetails.js" />

@@ -3,7 +3,15 @@
     ViewBag.Title = "Section";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@Scripts.Render("~/Scripts/EMS/Section/SectionSetting.js")
+<div class="bs-example">
+    <div class="row">
+        <div class="col-md-5">
+      @Html.Partial("_SectionDetails")
+        </div>
+        <div class="col-md-7">
+          @Html.Partial("_SectionSummary")
+        </div>
+    </div>
 
-@Html.Partial("_SectionDetails")
-@Html.Partial("_SectionSummary")
-
+</div>
