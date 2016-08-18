@@ -120,6 +120,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SectionController.cs" />
+    <Compile Include="Controllers\SemesterController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
@@ -148,10 +149,16 @@
     <Content Include="Scripts\EMS\Class\ClassDetails.js" />
     <Content Include="Scripts\EMS\Class\ClassSetting.js" />
     <Content Include="Scripts\EMS\Class\ClassSummary.js" />
+    <Content Include="Scripts\EMS\CollectionType\CollectionTypeDetails.js" />
+    <Content Include="Scripts\EMS\CollectionType\CollectionTypeSetting.js" />
+    <Content Include="Scripts\EMS\CollectionType\CollectionTypeSummary.js" />
     <Content Include="Scripts\EMS\FileUpload\FileUploadManager.js" />
     <Content Include="Scripts\EMS\Section\ScetionDetails.js" />
     <Content Include="Scripts\EMS\Section\SectionSetting.js" />
     <Content Include="Scripts\EMS\Section\SectionSummary.js" />
+    <Content Include="Scripts\EMS\Semester\SemesterDetails.js" />
+    <Content Include="Scripts\EMS\Semester\SemesterSetting.js" />
+    <Content Include="Scripts\EMS\Semester\SemesterSummary.js" />
     <Content Include="Scripts\EMS\Subject\SubjectSetting.js" />
     <Content Include="Scripts\EMS\Subject\SubjectSummary.js" />
     <Content Include="Scripts\EMS\Test\TestDetails.js" />
@@ -1837,6 +1844,9 @@
     <Content Include="Views\CollectionType\CollectionType.cshtml" />
     <Content Include="Views\CollectionType\_CollectionTypeDetails.cshtml" />
     <Content Include="Views\CollectionType\_CollectionTypeSummary.cshtml" />
+    <Content Include="Views\Semester\Semester.cshtml" />
+    <Content Include="Views\Semester\_SemesterDetails.cshtml" />
+    <Content Include="Views\Semester\_SemesterSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -8,9 +8,9 @@ using Entities.EMS;
 
 namespace BLL.EMS.Class
 {
-   public interface IClassRepositorycs
+    public interface IClassRepositorycs
     {
-     string  ClassDataSave(ClassEntity objClass);
-       GridEntity<ClassEntity> GetClassSummary(GridOptions options);
+        string ClassDataSave(ClassEntity objClass);
+        GridEntity<ClassEntity> GetClassSummary(GridOptions options);
     }
 }

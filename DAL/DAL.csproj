@@ -40,7 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EMS\DataService\ClassDataService.cs" />
+    <Compile Include="EMS\DataService\CollectionTypeDataService.cs" />
     <Compile Include="EMS\DataService\SectionDataService.cs" />
+    <Compile Include="EMS\DataService\SemesterDataService.cs" />
     <Compile Include="EMS\DataService\SubjectDataService.cs" />
     <Compile Include="EMS\DataService\TestDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

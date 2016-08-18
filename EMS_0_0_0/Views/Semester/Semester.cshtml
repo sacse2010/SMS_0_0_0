@@ -1,21 +1,21 @@
 ﻿
 @{
-    ViewBag.Title = "CollectionType";
+    ViewBag.Title = "Semester";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-
-@Scripts.Render("~/Scripts/EMS/CollectionType/CollectionTypeSetting.js")
+@Scripts.Render("~/Scripts/EMS/Semester/SemesterSetting.js")
 <div class="bs-example">
     <div class="row">
         <div class="col-md-5">
-           @Html.Partial("_CollectionTypeDetails")
+            @Html.Partial("_SemesterDetails")
         </div>
         <div class="col-md-7">
-           @Html.Partial("_CollectionTypeSummary")
+            @Html.Partial("_SemesterSummary")
         </div>
     </div>
 
 </div>
+
 
