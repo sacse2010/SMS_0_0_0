@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Grade";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/Scripts/EMS/Grade/GradeSetting.js")
+<div class="bs-example">
+    <div class="row">
+        <div class="col-md-5">
+            @Html.Partial("_GradeDetails")
+        </div>
+        <div class="col-md-7">
+            @Html.Partial("_GradeSummary")
+        </div>
+    </div>
+
+</div>
+

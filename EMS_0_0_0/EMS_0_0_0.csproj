@@ -117,6 +117,7 @@
     <Compile Include="Controllers\ClassInfoController.cs" />
     <Compile Include="Controllers\CollectionTypeController.cs" />
     <Compile Include="Controllers\FeesCollectionController.cs" />
+    <Compile Include="Controllers\GradeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SectionController.cs" />
@@ -153,6 +154,9 @@
     <Content Include="Scripts\EMS\CollectionType\CollectionTypeSetting.js" />
     <Content Include="Scripts\EMS\CollectionType\CollectionTypeSummary.js" />
     <Content Include="Scripts\EMS\FileUpload\FileUploadManager.js" />
+    <Content Include="Scripts\EMS\Grade\GradeDetails.js" />
+    <Content Include="Scripts\EMS\Grade\GradeSetting.js" />
+    <Content Include="Scripts\EMS\Grade\GradeSummary.js" />
     <Content Include="Scripts\EMS\Section\ScetionDetails.js" />
     <Content Include="Scripts\EMS\Section\SectionSetting.js" />
     <Content Include="Scripts\EMS\Section\SectionSummary.js" />
@@ -1847,6 +1851,9 @@
     <Content Include="Views\Semester\Semester.cshtml" />
     <Content Include="Views\Semester\_SemesterDetails.cshtml" />
     <Content Include="Views\Semester\_SemesterSummary.cshtml" />
+    <Content Include="Views\Grade\Grade.cshtml" />
+    <Content Include="Views\Grade\_GradeDetails.cshtml" />
+    <Content Include="Views\Grade\_GradeSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

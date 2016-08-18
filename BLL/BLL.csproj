@@ -43,6 +43,8 @@
     <Compile Include="EMS\Class\IClassRepositorycs.cs" />
     <Compile Include="EMS\CollectionType\CollectiontypeService.cs" />
     <Compile Include="EMS\CollectionType\ICollectionTypeRepository.cs" />
+    <Compile Include="EMS\Grade\GradeService.cs" />
+    <Compile Include="EMS\Grade\IGradeRepository.cs" />
     <Compile Include="EMS\Section\ISectionReposiroty.cs" />
     <Compile Include="EMS\Section\SectionService.cs" />
     <Compile Include="EMS\Semester\ISemesterRepository.cs" />
