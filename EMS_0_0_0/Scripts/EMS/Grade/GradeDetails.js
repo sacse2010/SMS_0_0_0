@@ -1,6 +1,5 @@
 ﻿var GradeDetailsManager = {
     SaveGradeDate: function () {
-        debugger 
         var validator = $("#GradeForm").kendoValidator().data("kendoValidator"), status = $(".status");
         if (validator.validate()) {
             var obj = GradeDetailsHelper.CreateGradeObject();
@@ -69,13 +68,21 @@ var GradeDetailsHelper = {
     CreateGradeObject: function () {
         var obj = new Object();
         obj.GradeId = $("#hdnGradeId").val();
-        obj.Name = $("#txtGradeName").val();
+        obj.GradeName = $("#txtGradeName").val();
+        obj.GradePoint = $("#txtGradePoint").val();
+        obj.MarkForm = $("#txtMarkForm").val();
+        obj.MarkUpto = $("#txtMarkUpto").val();
+        obj.Description = $("#txtDescription").val();
         obj.IsActive = $("#chkIsActive").is(":checked") == true ? 1 : 0;
         return obj;
     },
     FillGradeDetailsInForm: function (obj) {
         $("#hdnGradeId").val(obj.GradeId);
-        $("#txtGradeName").val(obj.Name);
+        $("#txtGradeName").val(obj.GradeName);
+        $("#txtGradePoint").val(obj.GradePoint);
+        $("#txtMarkForm").val(obj.MarkForm);
+        $("#txtMarkUpto").val(obj.MarkUpto);
+        $("#txtDescription").val(obj.Description);
         if (obj.IsActive == 1) {
             $("#chkIsActive").prop('checked', 'checked');
         } else {
@@ -85,6 +92,10 @@ var GradeDetailsHelper = {
     ClearAllGrade: function () {
         $("#hdnGradeId").val(0);
         $("#txtGradeName").val("");
+        $("#txtGradePoint").val("");
+        $("#txtMarkForm").val("");
+        $("#txtMarkUpto").val("");
+        $("#txtDescription").val("");
         $("#chkIsActive").prop('checked', 'checked');
     },
 

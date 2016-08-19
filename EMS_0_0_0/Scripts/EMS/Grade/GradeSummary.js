@@ -47,8 +47,12 @@
 var GradeSummaryHelper = {
     GenerateGradeColumns: function () {
         return columns = [
-            { field: "Name", title: "Name", width: 100 },
-            { field: "IsActive", title: "Status", width: 50 },
+            { field: "GradeName", title: "Grade", width: 60 },
+            { field: "GradePoint", title: "Point", width: 50},
+            { field: "MarkForm", title: "MarkForm", width: 50 },
+            { field: "MarkUpto", title: "MarkUpto", width: 50 },
+            { field: "Description", title: "Description", width: 150 },
+            { field: "IsActive", title: "Status", width: 25 },
             { field: "GradeId", hidden: true },
             { field: "Edit", title: "Edit", filterable: false, width: 60, template: '<button type="button" class="btn btn-default btn-sm" value="Edit" id="btnEdit" onClick="GradeSummaryHelper.clickEventForEditButton()" ><span class="glyphicon glyphicon-edit"></span> Edit</button>', sortable: false }
         ];
