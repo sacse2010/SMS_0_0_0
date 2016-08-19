@@ -1,18 +1,17 @@
 ﻿
-
 var TestDetailsManager = {
     SaveTestData: function () {
 
-        var obj= TestDetailsHelper.CreateTestObject();
+        var obj = TestDetailsHelper.CreateTestObject();
 
         var objTest = JSON.stringify(obj).replace(/&/g, "^");
         var jsonParam = 'objTest:' + objTest;
-            var serviceUrl = "../Test/SaveTestData/";
-            AjaxManager.SendJson2(serviceUrl, jsonParam, onSuccess, onFailed);
+        var serviceUrl = "../Test/SaveTestData/";
+        AjaxManager.SendJson2(serviceUrl, jsonParam, onSuccess, onFailed);
 
         function onSuccess(jsonData) {
             if (jsonData == "Success") {
-                
+
                 AjaxManager.MsgBox('success', 'center', 'Success:', 'Test Saved Successfully',
                     [{
                         addClass: 'btn btn-primary', text: 'Ok', onClick: function ($noty) {
@@ -50,7 +49,7 @@ var TestDetailsManager = {
         }
     },
 
-    GetTestTypeComboData:function() {
+    GetTestTypeComboData: function () {
         var obj = "";
         var jsonParam = "";
         var serviceUrl = "../Test/GetTestTypeComboData/";
@@ -69,7 +68,7 @@ var TestDetailsManager = {
 
 
 var TestDetailsHelper = {
-    CreateTestObject: function() {
+    CreateTestObject: function () {
         var obj = new Object();
         obj.TestId = $("#hdnTestId").val();
         obj.TestCode = $("#txtTestCode").val();
@@ -79,7 +78,7 @@ var TestDetailsHelper = {
         return obj;
     },
 
-    PopulateTestTypeCombo:function() {
+    PopulateTestTypeCombo: function () {
         var objType = new Object();
         objType = TestDetailsManager.GetTestTypeComboData();
 

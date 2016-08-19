@@ -1,0 +1,52 @@
+﻿@Scripts.Render("~/Scripts/EMS/Class/ClassDetails.js")
+
+<div id="ClassForm">
+    <div class="panel panel-default">
+        <div class="panel-heading">Class Info</div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <input type="text" id="hdnClassId" class="hidden"/>
+                   
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="inputClassName">Class Name</label>
+                    <div class="col-md-8">
+                        <input type="text" placeholder="Class Name" id="txtClassName" class="form-control" name="Class Name" required validationMessage="Enter {0}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="inputDescription">Description</label>
+                    <div class="col-md-8">
+                        <textarea class="form-control" id="txtDescription" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="chkIsActive" checked name="Accept"> IsActive
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <ul class="list-group ">
+            <li class="list-group-item">
+                <button id="btnSave" class="btn btn-default" type="submit"><span class="glyphicon glyphicon-save" ria-hidden="true"></span>Submit</button>
+                <button id="btnClear" class="btn btn-default" type="reset">
+                    <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
+                   Clear
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+

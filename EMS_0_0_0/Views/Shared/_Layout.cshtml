@@ -9,8 +9,14 @@
 
     @Styles.Render("~/UIFramework/KendoUI/kendo/kendoui.web/styles/kendo.common.min.css")
     @Styles.Render("~/UIFramework/KendoUI/kendo/kendoui.web/styles/kendo.bootstrap.min.css")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/docs.min.css")
+    @Styles.Render("~/Content/coustom.css")
+    @*@Styles.Render("~/UIFramework/MessageBox/css/buttons.css")*@
+
+    @Styles.Render("~/UIFramework/FileInput/css/fileinput.css")
+    @Scripts.Render("~/Scripts/jquery-2.2.3.min.js")
+    @Scripts.Render("~/UIFramework/FileInput/js/fileinput.js")
+    @Scripts.Render("~/UIFramework/KendoUI/kendo/kendoui.web/js/kendo.all.min.js")
 
     @{
         var themeName = Session["themeName"];
@@ -25,11 +31,11 @@
         }
     }
     @*@Styles.Render("~/UIFramework/KendoUI/kendo/kendoui.web/styles/kendo." + @themeName + ".min.css")
-    @Styles.Render("~/UIFramework/KendoUI/Css/KendoThemes.css")*@
+        @Styles.Render("~/UIFramework/KendoUI/Css/KendoThemes.css")*@
 
 
-    
-   
+
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -48,6 +54,24 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Test", "Test", "Test")</li>
+                    <li>@Html.ActionLink("Fees Collection", "FeesCollection", "FeesCollection")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Student Profile", "Profile", "Profile")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Basic Setup <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Subject Info", "Subject", "Subject")</li>
+                            <li>@Html.ActionLink("Scetion Info", "Section", "Section")</li>
+                            <li>@Html.ActionLink("Class Info", "ClassInfo", "ClassInfo")</li>
+                            <li>@Html.ActionLink("Collection Type", "CollectionType", "CollectionType")</li>
+                            <li>@Html.ActionLink("Semester Info", "Semester", "Semester")</li>
+                            <li>@Html.ActionLink("Grade Info", "Grade", "Grade")</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -59,8 +83,9 @@
             <p>&copy; @DateTime.Now.Year - Education Management System</p>
         </footer>
     </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
 
-  
     @RenderSection("scripts", required: false)
 </body>
 </html>

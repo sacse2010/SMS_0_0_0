@@ -1,0 +1,45 @@
+﻿@Scripts.Render("~/Scripts/EMS/Section/ScetionDetails.js")
+
+<div id="SectionForm">
+    <div class="panel panel-default">
+        <div class="panel-heading">Section Info</div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <input type="text" class="hidden" id="hdnSectionId"  />
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="inputSectionName">Section Name</label>
+                    <div class="col-md-8">
+                        <input type="text" placeholder="Section Name" id="txtSectionName" name="Section Name" class="form-control" required validationMessage="Enter {0}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="inputDescription">Description</label>
+                    <div class="col-md-8">
+                        <textarea class="form-control" id="txtDescription" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-8">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="chkIsActive" checked name="Accept"> IsActive
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <ul class="list-group ">
+            <li class="list-group-item">
+                <button class="btn btn-default" id="btnSave" type="submit">Submit</button>
+            </li>
+        </ul>
+    </div>
+</div>
+

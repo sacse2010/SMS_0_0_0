@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "ClassInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/Scripts/EMS/Class/ClassSetting.js")
+<div class="bs-example">
+    <div class="row">
+        <div class="col-md-5">
+          @Html.Partial("_ClassInfoDetails")
+        </div>
+        <div class="col-md-7">
+           @Html.Partial("_ClassInfoSummary")
+        </div>
+    </div>
+
+</div>

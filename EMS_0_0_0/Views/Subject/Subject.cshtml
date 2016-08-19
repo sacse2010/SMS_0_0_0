@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Subject";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/EMS/Subject/SubjectSetting.js")
+<div class="bs-example">
+    <div class="row">
+        <div class="col-md-5">
+            @Html.Partial("_SubjectDetails")
+        </div>
+        <div class="col-md-7">
+            @Html.Partial("_SubjectSummary")
+        </div>
+    </div>
+
+</div>
+

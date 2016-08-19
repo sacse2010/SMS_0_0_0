@@ -43,7 +43,7 @@ namespace DBManager
 
                     DataTable dataTable = _connection.GetDataTable(sqlQuery);
 
-                    var  sqlCount = "SELECT COUNT(*) FROM (" + query + " ) As tbl " + condition;
+                    var sqlCount = "SELECT COUNT(*) FROM (" + query + " ) As tbl " + condition;
 
 
                     int totalCount = Convert.ToInt32(new CommonConnection().ExecuteScalar(sqlCount));
@@ -55,10 +55,10 @@ namespace DBManager
                 }
                 catch (Exception ex)
                 {
-                   
+
                     throw ex;
                 }
-              
+
             }
 
             public static GridEntity<T> DataSourceWithDateQuary(GridOptions options, string query, string orderBy, string condition, string withDateQuary)
@@ -113,7 +113,7 @@ namespace DBManager
                 {
                     throw ex;
                 }
-               
+
 
             }
 
@@ -150,10 +150,10 @@ namespace DBManager
 
                     DataTable dataTable = _connection.GetDataTable(sqlQuery);
                     gridDataSet.Tables.Add(dataTable);
-                  
-                   var sqlCount = "SELECT COUNT(*) FROM (" + query + " ) As tbl " + condition;
 
-                   int totalCount = Convert.ToInt32(_connection.ExecuteScalar(sqlCount));
+                    var sqlCount = "SELECT COUNT(*) FROM (" + query + " ) As tbl " + condition;
+
+                    int totalCount = Convert.ToInt32(_connection.ExecuteScalar(sqlCount));
                     DataTable totalCountDt = new DataTable("TotalCount");
                     DataColumn col = new DataColumn("totalCount");
                     col.DataType = Type.GetType("System.Int32");
@@ -200,9 +200,9 @@ namespace DBManager
                 return GenericDataSource(options, query, orderBy, "");
             }
 
-            private static void GetGridPagingQuery(GridOptions options, string query, string orderBy, string condition, out  StringBuilder gridQuery, out StringBuilder totalQuery, DatabaseType databaseType)
+            private static void GetGridPagingQuery(GridOptions options, string query, string orderBy, string condition, out StringBuilder gridQuery, out StringBuilder totalQuery, DatabaseType databaseType)
             {
-               
+
                 try
                 {
                     gridQuery = new StringBuilder();
@@ -251,7 +251,7 @@ namespace DBManager
 
                     throw ex;
                 }
-               
+
             }
         }
 
@@ -260,7 +260,7 @@ namespace DBManager
             public static List<T> DataSource(string query)
             {
                 var returnList = new List<T>();
-              
+
                 try
                 {
                     CommonConnection connection = new CommonConnection();
@@ -278,7 +278,7 @@ namespace DBManager
 
                     throw ex;
                 }
-               
+
                 return returnList;
             }
 
@@ -325,6 +325,66 @@ namespace DBManager
         //    }
         //}
 
+
+
+    }
+
+    public class Data<T>
+    {
+
+        public static List<T> DataSource(string query)
+        {
+            var connection = new CommonConnection();
+            try
+            {
+
+                DataTable dataTable = connection.GetDataTable(query);
+
+                var objData = (List<T>)ListConversion.ConvertTo<T>(dataTable);
+                return objData;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+
+        public static List<T> GenericDataSource(string query)
+        {
+            var connection = new CommonConnection();
+            try
+            {
+
+                DataTable dataTable = connection.GetDataTable(query);
+
+                var objData = (List<T>)GenericListGenerator.GetList<T>(dataTable);
+                if (objData.Count == 0)
+                {
+                    return new List<T>();
+                }
+                return objData;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+
+        public static List<T> SchedulerDataSource(string query)
+        {
+            return GenericDataSource(query);
+
+        }
 
 
     }

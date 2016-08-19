@@ -39,6 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EMS\Class\ClassService.cs" />
+    <Compile Include="EMS\Class\IClassRepositorycs.cs" />
+    <Compile Include="EMS\CollectionType\CollectiontypeService.cs" />
+    <Compile Include="EMS\CollectionType\ICollectionTypeRepository.cs" />
+    <Compile Include="EMS\Grade\GradeService.cs" />
+    <Compile Include="EMS\Grade\IGradeRepository.cs" />
+    <Compile Include="EMS\Section\ISectionReposiroty.cs" />
+    <Compile Include="EMS\Section\SectionService.cs" />
+    <Compile Include="EMS\Semester\ISemesterRepository.cs" />
+    <Compile Include="EMS\Semester\SemesterService.cs" />
+    <Compile Include="EMS\Subject\ISubjectRepository.cs" />
+    <Compile Include="EMS\Subject\SubjectService.cs" />
     <Compile Include="EMS\Test\ITestRepository.cs" />
     <Compile Include="EMS\Test\TestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

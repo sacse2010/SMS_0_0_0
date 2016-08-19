@@ -21,7 +21,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
     <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -114,7 +114,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClassInfoController.cs" />
+    <Compile Include="Controllers\CollectionTypeController.cs" />
+    <Compile Include="Controllers\FeesCollectionController.cs" />
+    <Compile Include="Controllers\GradeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\SectionController.cs" />
+    <Compile Include="Controllers\SemesterController.cs" />
+    <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -124,6 +132,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\coustom.css" />
+    <Content Include="Content\docs.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -137,6 +147,24 @@
     <Content Include="Scripts\Common\OrganogramTree.js" />
     <Content Include="Scripts\Common\postify.js" />
     <Content Include="Scripts\Common\Themes.js" />
+    <Content Include="Scripts\EMS\Class\ClassDetails.js" />
+    <Content Include="Scripts\EMS\Class\ClassSetting.js" />
+    <Content Include="Scripts\EMS\Class\ClassSummary.js" />
+    <Content Include="Scripts\EMS\CollectionType\CollectionTypeDetails.js" />
+    <Content Include="Scripts\EMS\CollectionType\CollectionTypeSetting.js" />
+    <Content Include="Scripts\EMS\CollectionType\CollectionTypeSummary.js" />
+    <Content Include="Scripts\EMS\FileUpload\FileUploadManager.js" />
+    <Content Include="Scripts\EMS\Grade\GradeDetails.js" />
+    <Content Include="Scripts\EMS\Grade\GradeSetting.js" />
+    <Content Include="Scripts\EMS\Grade\GradeSummary.js" />
+    <Content Include="Scripts\EMS\Section\ScetionDetails.js" />
+    <Content Include="Scripts\EMS\Section\SectionSetting.js" />
+    <Content Include="Scripts\EMS\Section\SectionSummary.js" />
+    <Content Include="Scripts\EMS\Semester\SemesterDetails.js" />
+    <Content Include="Scripts\EMS\Semester\SemesterSetting.js" />
+    <Content Include="Scripts\EMS\Semester\SemesterSummary.js" />
+    <Content Include="Scripts\EMS\Subject\SubjectSetting.js" />
+    <Content Include="Scripts\EMS\Subject\SubjectSummary.js" />
     <Content Include="Scripts\EMS\Test\TestDetails.js" />
     <Content Include="Scripts\EMS\Test\TestSettings.js" />
     <Content Include="Scripts\EMS\Test\TestSummary.js" />
@@ -167,6 +195,10 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="UIFramework\FileInput\css\fileinput.css" />
+    <Content Include="UIFramework\FileInput\css\fileinput.min.css" />
+    <Content Include="UIFramework\FileInput\js\fileinput.js" />
+    <Content Include="UIFramework\FileInput\js\fileinput.min.js" />
     <Content Include="UIFramework\KendoUI\Css\Common.css" />
     <Content Include="UIFramework\KendoUI\Css\CommonSize.css" />
     <Content Include="UIFramework\KendoUI\Css\Common_Bat.css" />
@@ -1798,10 +1830,35 @@
     <Content Include="Views\Test\Test.cshtml" />
     <Content Include="Views\Test\TestDetails.cshtml" />
     <Content Include="Views\Test\TestSummary.cshtml" />
+    <Content Include="Views\Profile\Profile.cshtml" />
+    <Content Include="Views\Profile\_ProfileDetails.cshtml" />
+    <Content Include="Views\Profile\_ProfileSummary.cshtml" />
+    <Content Include="Views\FeesCollection\FeesCollection.cshtml" />
+    <Content Include="Views\FeesCollection\_FeesCollectionDetails.cshtml" />
+    <Content Include="Views\FeesCollection\_FeesCollectionSummary.cshtml" />
+    <Content Include="Views\Subject\Subject.cshtml" />
+    <Content Include="Views\Subject\_SubjectDetails.cshtml" />
+    <Content Include="Views\Subject\_SubjectSummary.cshtml" />
+    <Content Include="Views\Section\Section.cshtml" />
+    <Content Include="Views\Section\_SectionDetails.cshtml" />
+    <Content Include="Views\Section\_SectionSummary.cshtml" />
+    <Content Include="Views\ClassInfo\ClassInfo.cshtml" />
+    <Content Include="Views\ClassInfo\_ClassInfoDetails.cshtml" />
+    <Content Include="Views\ClassInfo\_ClassInfoSummary.cshtml" />
+    <Content Include="Views\CollectionType\CollectionType.cshtml" />
+    <Content Include="Views\CollectionType\_CollectionTypeDetails.cshtml" />
+    <Content Include="Views\CollectionType\_CollectionTypeSummary.cshtml" />
+    <Content Include="Views\Semester\Semester.cshtml" />
+    <Content Include="Views\Semester\_SemesterDetails.cshtml" />
+    <Content Include="Views\Semester\_SemesterSummary.cshtml" />
+    <Content Include="Views\Grade\Grade.cshtml" />
+    <Content Include="Views\Grade\_GradeDetails.cshtml" />
+    <Content Include="Views\Grade\_GradeSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -1811,7 +1868,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="UIFramework\KendoUI\kendo\kendoui.web\typescript\kendo.web.d.ts" />
+    <Content Include="UIFramework\KendoUI\kendo\kendoui.web\js\kendo.all.min.js" />
+    <Content Include="Scripts\EMS\Subject\SubjectDetails.js" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">

@@ -9,17 +9,15 @@ namespace EMS_0_0_0
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js",
+                        //"~/Scripts/jquery-{version}.js",
                         "~/Scripts/Common/common.js",
                         "~/UIFramework/KendoUI/kendo/kendoui.web/js/kendo.web.min.js",
                         "~/Scripts/json2.js",
                         "~/Scripts/Common/postify.js",
                         "~/Scripts/jquery.blockUI.js",
-                        "~/UIFramework/MessageBox/css/buttons.css",
                         "~/UIFramework/MessageBox/js/noty/jquery.noty.js",
                         "~/UIFramework/MessageBox/js/noty/layouts/center.js",
-                        "~/UIFramework/MessageBox/js/noty/themes/default.js",
-                        "~/Scripts/jquery-2.2.3.min.js"));
+                        "~/UIFramework/MessageBox/js/noty/themes/default.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -35,6 +33,7 @@ namespace EMS_0_0_0
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/docs.min.css",
                       "~/Content/site.css"));
         }
     }

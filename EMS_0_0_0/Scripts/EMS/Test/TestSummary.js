@@ -65,7 +65,7 @@ var TestSummaryHelper = {
                { field: "TestName", title: "Test Name", width: 100 },
                { field: "TestDescription", title: "Description", width: 100 },
                { field: "TestId", hidden: true },
-            { field: "Edit", title: "Edit", filterable: false, width: 60, template: '<button type="button" value="Edit" id="btnEdit" onClick="TestSummaryHelper.clickEventForEditButton()" ><span class="k-icon k-i-search"></span></button>', sortable: false }
+            { field: "Edit", title: "Edit", filterable: false, width: 60, template: '<button type="button" class="btn btn-default btn-sm" value="Edit" id="btnEdit" onClick="TestSummaryHelper.clickEventForEditButton()" ><span class="glyphicon glyphicon-edit"></span> Edit</button>', sortable: false }
         ];
     },
     clickEventForEditButton: function () {

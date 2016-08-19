@@ -1,0 +1,75 @@
+﻿@Scripts.Render("~/Scripts/EMS/Grade/GradeDetails.js")
+
+<div id="GradeForm">
+    <div class="panel panel-default">
+        <div class="panel-heading">Grade Info</div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <input type="text" id="hdnGradeId" class="hidden" />
+
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="inputGradeName">Grade Name</label>
+                    <div class="col-md-8">
+                        <input type="text" placeholder="Grade Name" id="txtGradeName" class="form-control" name="Grade Name" required validationMessage="Enter {0}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="inputGradePoint">Grade Point</label>
+                    <div class="col-md-8">
+                        <input type="number" placeholder="Grade Point" id="txtGradePoint" class="form-control" name="Grade Point Nunber Type" required validationMessage="Enter {0}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="inputMarkForm">Mark From</label>
+                    <div class="col-md-8">
+                        <input type="number" placeholder="Mark From" id="txtMarkForm" class="form-control" name="Mark Form Nunber Type" required validationMessage="Enter {0}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="inputMarkUpto">Mark Upto</label>
+                    <div class="col-md-8">
+                        <input type="number" placeholder="Mark Upto" id="txtMarkUpto" class="form-control" name="Mark Upto Nunber Type" required validationMessage="Enter {0}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="inputDescription">Description</label>
+                    <div class="col-md-8">
+                        <textarea class="form-control" id="txtDescription" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="chkIsActive" checked name="Accept"> IsActive
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <ul class="list-group ">
+            <li class="list-group-item">
+                <button id="btnSave" class="btn btn-default" type="submit"><span class="glyphicon glyphicon-save" ria-hidden="true"></span>Submit</button>
+                <button id="btnClear" class="btn btn-default" type="reset">
+                    <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
+                    Clear
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+

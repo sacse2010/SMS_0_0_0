@@ -1,0 +1,64 @@
+﻿.bs-example {
+    border-radius: 0 0 0 0 !important;
+    padding: 15px 15px 15px !important;
+}
+
+    .bs-example::after {
+        content: none !important;
+    }
+
+.well {
+    border-radius: 0 !important;
+}
+
+.well-sm {
+    border-radius: 0 !important;
+}
+
+.panel {
+    border-radius: 0 !important;
+}
+
+.panel-heading {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+.nav-tabs > li > a {border-radius: 0 !important}
+.panel.with-nav-tabs .panel-heading {
+    padding: 5px 5px 0 5px !important;
+}
+
+.panel.with-nav-tabs .nav-tabs {
+    border-bottom: none !important;
+}
+
+.panel.with-nav-tabs .nav-justified {
+    margin-bottom: -1px !important;
+}
+.form-control{border-radius: 0 !important}
+.btn{border-radius: 0 !important}
+ .valid {
+        color: green;
+    }
+
+    .invalid {
+        color: red;
+    }
+    span.k-widget.k-tooltip-validation {
+        display;
+        inline-block;
+        width: 160px;
+        text-align: left;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        background: none;
+        box-shadow: none;
+        color: red;
+    }
+    .k-tooltip-validation .k-warning {
+        display: none;
+    }
+    .k-grid, .k-scheduler, .k-menu, .k-editor {
+    border-radius: 0 !important;
+}
